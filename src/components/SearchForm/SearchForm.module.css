@@ -1,0 +1,24 @@
+/* SearchForm.module.css */
+.searchForm {
+  margin: 20px;
+}
+
+.inputField {
+  padding: 8px;
+  margin-right: 8px;
+  width: 300px;
+  border-radius: 5px;
+}
+
+.submitButton {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  background-color: #0056b3;
+}

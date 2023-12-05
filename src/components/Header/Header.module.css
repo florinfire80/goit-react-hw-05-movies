@@ -1,0 +1,32 @@
+/* Header.module.css */
+header {
+  background-color: #333;
+  padding: 10px;
+  border: 1px solid;
+  box-shadow: 5px 10px 8px #888888;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navListItems {
+  margin: 0;
+}
+
+.navLink {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.navLink:hover {
+  color: #ffcc00;
+}
