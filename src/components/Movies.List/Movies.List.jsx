@@ -11,13 +11,11 @@ const MoviesList = ({ searchKeyword }) => {
     const fetchData = async () => {
       try {
         if (searchKeyword) {
-          // Dacă există un cuvânt cheie, efectuează căutarea
           const searchData = await searchMovieByKeyword(searchKeyword);
           if (searchData && searchData.results) {
             setMovies(searchData.results);
           }
         } else {
-          // Altfel, obține filmele trending
           const trendingData = await getTrendingMovies();
           if (trendingData && trendingData.results) {
             setMovies(trendingData.results);

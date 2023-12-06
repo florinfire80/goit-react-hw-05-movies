@@ -25,18 +25,4 @@ const SearchForm = ({ onSubmit }) => {
   );
 };
 
-// const SearchComponent = () => {
-//   const [searchParams, setSearchParams] = useState({});
-
-//   const handleSubmit = value => {
-//     setSearchParams({ query: value });
-//   };
-
-//   return (
-//     <div>
-//       <SearchForm onSubmit={handleSubmit} />
-//     </div>
-//   );
-// };
-
 export default SearchForm;
