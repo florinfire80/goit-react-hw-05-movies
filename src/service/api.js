@@ -35,7 +35,7 @@ const searchMovieByKeyword = async keyword => {
 
   try {
     const response = await fetch(
-      'https://api.themoviedb.org/3/search/movie?query=${keyword}&include_adult=false&language=en-US&page=1',
+      `https://api.themoviedb.org/3/search/movie?query=${keyword}&include_adult=false&language=en-US&page=1`,
       options
     );
     if (!response.ok) {
