@@ -1,5 +1,6 @@
 // Movies.jsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import SearchForm from '../components/SearchForm/SearchForm';
 import MoviesList from '../components/Movies.List/Movies.List';
 
@@ -9,6 +10,11 @@ const Movies = () => {
   const handleSubmit = value => {
     setSearchParams({ query: value });
   };
+
+  const { movieId } = useParams();
+  useEffect(() => {
+    if (!movieId) return;
+  }, [movieId]);
 
   return (
     <div>
