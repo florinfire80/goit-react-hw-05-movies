@@ -10,17 +10,12 @@ const MoviesList = ({ searchKeyword }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        if (searchKeyword) {
-          const searchData = await searchMovieByKeyword(searchKeyword);
-          if (searchData && searchData.results) {
-            setMovies(searchData.results);
-          }
-        } else {
-          const trendingData = await getTrendingMovies();
-          if (trendingData && trendingData.results) {
-            setMovies(trendingData.results);
-          }
-        }
+        const searchData = searchKeyword
+          ? await searchMovieByKeyword(searchKeyword)
+          : null;
+        const trendingData = !searchKeyword ? await getTrendingMovies() : null;
+
+        setMovies(searchData?.results || trendingData?.results || []);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -39,7 +34,8 @@ const MoviesList = ({ searchKeyword }) => {
       <ul className={styles.movieList}>
         {movies.map(
           movie =>
-            movie.title && (
+            movie.title &&
+            movie.id && (
               <li key={movie.id} className={styles.movieItem}>
                 <Link to={`/movie/${movie.id}`} className={styles.movieLink}>
                   {movie.title}

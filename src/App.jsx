@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Home from './pages/Home';
 import Movies from './pages/Movies';
-import MovieDetails from './pages/MovieDetails';
+import MovieDetails from './pages/MovieDetails/MovieDetails';
 import NotFound from './pages/NotFound';
 
 const App = () => {
@@ -15,7 +15,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/movies" element={<Movies />} />
-          <Route path="/movie/:id" element={<MovieDetails />} />
+          <Route path="/movie/:movieId" element={<MovieDetails />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>

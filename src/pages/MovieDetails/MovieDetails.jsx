@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { searchMovieById } from 'service/api';
+import styles from './MovieDetails.module.css';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
@@ -28,31 +29,36 @@ const MovieDetails = () => {
     poster_path,
     original_title,
     release_date,
-    popularity,
+    vote_average,
     overview,
-    genre_ids,
+    genres,
   } = movieDetails;
 
+  const userScore = Math.round(vote_average * 10);
+
   return (
-    <div>
-      <h2>{original_title}</h2>
+    <div className={styles.container}>
       <img
         src={`https://image.tmdb.org/t/p/w500${poster_path}`}
         alt={original_title}
+        className={styles.poster}
       />
-      <p>
-        <strong>Release Date:</strong>{' '}
-        {new Date(release_date).toLocaleDateString()}
-      </p>
-      <p>
-        <strong>Popularity:</strong> {popularity}
-      </p>
-      <p>
-        <strong>Overview:</strong> {overview}
-      </p>
-      <p>
-        <strong>Genre IDs:</strong> {genre_ids.join(', ')}
-      </p>
+      <div className={styles.container.data}>
+        <h2 className={styles.title}>{original_title}</h2>
+        <p className={styles.releaseDate}>
+          <strong>Release Date:</strong>{' '}
+          {new Date(release_date).toLocaleDateString()}
+        </p>
+        <p className={styles.userScore}>
+          <strong>User score:</strong> {userScore} %
+        </p>
+        <p className={styles.overview}>
+          <strong>Overview:</strong> {overview}
+        </p>
+        <p className={styles.genres}>
+          <strong>Genres:</strong> {genres.map(genre => genre.name).join(', ')}
+        </p>
+      </div>
     </div>
   );
 };

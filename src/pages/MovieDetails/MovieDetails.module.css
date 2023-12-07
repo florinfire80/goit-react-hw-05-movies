@@ -1,0 +1,45 @@
+/* MovieDetails.module.css */
+
+.container {
+  display: flex;
+  max-width: 1000px;
+  margin-left: 20px;
+  margin-top: 20px;
+  padding: 20px;
+}
+.container.data {
+  display: flex;
+  flex-direction: column;
+}
+.poster {
+  width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-top: 50px;
+}
+
+.releaseDate {
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+
+.userScore {
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+
+.overview {
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.genres {
+  font-style: italic;
+  margin-left: 20px;
+}

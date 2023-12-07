@@ -3,15 +3,16 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import SearchForm from '../components/SearchForm/SearchForm';
 import MoviesList from '../components/Movies.List/Movies.List';
+import MovieDetails from './MovieDetails/MovieDetails';
 
 const Movies = () => {
   const [searchParams, setSearchParams] = useState({});
+  const { movieId } = useParams();
 
   const handleSubmit = value => {
     setSearchParams({ query: value });
   };
 
-  const { movieId } = useParams();
   useEffect(() => {
     if (!movieId) return;
   }, [movieId]);
@@ -19,7 +20,12 @@ const Movies = () => {
   return (
     <div>
       <SearchForm onSubmit={handleSubmit} />
-      {searchParams.query && <MoviesList searchKeyword={searchParams.query} />}
+      {searchParams.query ? (
+        <MoviesList searchKeyword={searchParams.query} />
+      ) : // Verificăm dacă există movieId și afișăm detaliile despre film
+      movieId ? (
+        <MovieDetails />
+      ) : null}
     </div>
   );
 };
