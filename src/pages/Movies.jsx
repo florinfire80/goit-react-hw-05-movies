@@ -1,4 +1,3 @@
-// Movies.jsx
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import SearchForm from '../components/SearchForm/SearchForm';
@@ -22,8 +21,7 @@ const Movies = () => {
       <SearchForm onSubmit={handleSubmit} />
       {searchParams.query ? (
         <MoviesList searchKeyword={searchParams.query} />
-      ) : // Verificăm dacă există movieId și afișăm detaliile despre film
-      movieId ? (
+      ) : movieId ? (
         <MovieDetails />
       ) : null}
     </div>

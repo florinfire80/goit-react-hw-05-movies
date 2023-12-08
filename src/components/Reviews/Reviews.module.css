@@ -1,0 +1,20 @@
+.reviewsContainer {
+  margin-top: 20px;
+}
+
+.reviewList {
+  list-style: none;
+  padding: 0;
+}
+
+.reviewItem {
+  margin-bottom: 15px;
+}
+
+.author {
+  font-weight: bold;
+}
+
+.content {
+  margin-top: 5px;
+}

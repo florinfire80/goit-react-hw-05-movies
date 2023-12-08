@@ -1,11 +1,13 @@
-/* MovieDetails.module.css */
-
 .container {
   display: flex;
-  max-width: 1000px;
-  margin-left: 20px;
-  margin-top: 20px;
+  flex-direction: column;
+  max-width: 1200px;
   padding: 20px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.container_details {
+  display: flex;
 }
 .container.data {
   display: flex;
@@ -15,6 +17,7 @@
   width: 200px;
   height: auto;
   margin-bottom: 20px;
+  box-shadow: 8px 12px 2px 1px rgba(141, 141, 146, 0.2);
 }
 
 .title {
@@ -42,4 +45,18 @@
 .genres {
   font-style: italic;
   margin-left: 20px;
+}
+.additional {
+  border-top: 2mm ridge rgba(150, 150, 146, 0.6);
+  border-bottom: 2mm ridge rgba(150, 150, 146, 0.6);
+}
+.additional h3 {
+  cursor: pointer;
+  color: blue;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.additional h3:hover {
+  color: rgb(5, 5, 110);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }

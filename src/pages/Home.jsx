@@ -1,4 +1,3 @@
-// Home.js
 import React from 'react';
 import MoviesList from '../components/Movies.List/Movies.List';
 

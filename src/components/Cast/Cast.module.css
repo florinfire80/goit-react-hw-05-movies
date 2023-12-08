@@ -1,0 +1,25 @@
+.castContainer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.gridContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.gridItem {
+  width: 100px;
+}
+
+.actorImage {
+  width: 60px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.actorDetails {
+  margin-top: 8px;
+}
