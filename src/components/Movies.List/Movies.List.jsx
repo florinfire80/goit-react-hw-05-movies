@@ -31,17 +31,13 @@ const MoviesList = ({ searchKeyword }) => {
           : 'Trending today movies'}
       </h2>
       <ul className={styles.movieList}>
-        {movies.map(
-          movie =>
-            movie.title &&
-            movie.id && (
-              <li key={movie.id} className={styles.movieItem}>
-                <Link to={`/movie/${movie.id}`} className={styles.movieLink}>
-                  {movie.title}
-                </Link>
-              </li>
-            )
-        )}
+        {movies.map(movie => (
+          <li key={movie.id} className={styles.movieItem}>
+            <Link to={`/movie/${movie.id}`} className={styles.movieLink}>
+              {movie.title || movie.name}
+            </Link>
+          </li>
+        ))}
       </ul>
     </div>
   );
