@@ -9,6 +9,7 @@ import styles from './MovieDetails.module.css';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
+  const numericMovieId = parseInt(movieId, 10);
   const [movieDetails, setMovieDetails] = useState(null);
   const [showCast, setShowCast] = useState(false);
   const [showReview, setShowReview] = useState(false);
@@ -85,9 +86,9 @@ const MovieDetails = () => {
       <div className={styles.additional}>
         <p>Additional information</p>
         <h3 onClick={() => setShowCast(!showCast)}>Cast</h3>
-        {showCast && <Cast movieId={movieId} />}
+        {showCast && <Cast movieId={numericMovieId} />}
         <h3 onClick={() => setShowReview(!showReview)}>Reviews</h3>
-        {showReview && <Reviews movieId={movieId} />}
+        {showReview && <Reviews movieId={numericMovieId} />}
       </div>
     </div>
   );
