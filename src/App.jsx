@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
-import Loading from 'common/Loading/Loading';
+import Loading from './common/Loading/Loading';
 
 const Movies = lazy(() => import('./pages/Movies'));
 const MovieDetails = lazy(() => import('./pages/MovieDetails/MovieDetails'));
@@ -12,7 +12,7 @@ const Reviews = lazy(() => import('./components/Reviews/Reviews'));
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/goit-react-hw-05-movies">
       <div>
         <Header />
         <Suspense
